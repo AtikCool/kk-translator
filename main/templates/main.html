@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block title %}
+Translator
+{% endblock %}
+{% block con %}
+
+<form method="get">
+<div class="bg-yellow-500">
+    <div class="container  mx-auto py-8">
+        <div class="max-w-lg mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-yellow-600 px-6 py-4">
+                <h2 class="text-xl font-bold text-gray-700">Translator</h2>
+            </div>
+            <div class="p-6 bg-yellow-500">
+                <div class="mb-4 bg-yellow-500">
+                    <label for="source-language" class="block text-sm font-medium text-gray-700">Source Language</label>
+
+                    <select id="source-language" name="lang_from" class="mt-1 block w-full border-gray-300 bg-yellow-600 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="kaa">Каракалпакский</option>
+                        {% for value, language in languages_dict %}
+                        <option value="{{ value }}">{{ language }}</option>
+                        {% endfor %}
+                        <!-- Add more options for different languages -->
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="text-to-translate" class="block text-sm font-medium text-gray-700">Text to Translate</label>
+                    <textarea id="text-to-translate"  name="text" rows="4" class="mt-1 bg-yellow-600 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{% if text %}{{text}}{% endif%}</textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="target-language" class="block text-sm font-medium text-gray-700">Target Language</label>
+                    <select id="target-language" name="lang_to" class="mt-1 block w-full bg-yellow-600 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <option value="kaa">Каракалпакский</option>
+                        {% for value, language in languages_dict %}
+                        <option value="{{ value }}">{{ language }}</option>
+                        {% endfor %}
+                        <!-- Add more options for different languages -->
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="translated-text" class="block text-sm font-medium text-gray-700">Translated Text</label>
+                    <textarea id="translated-text" name="translated-text" rows="4" class="mt-1 bg-yellow-600 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" readonly>{% if translated_text %}{{ translated_text }}{% endif %}</textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Translate</button>
+                </div>
+            </div>
+        </div>
+</div>
+    </div>
+</form>
+
+{%  endblock %}

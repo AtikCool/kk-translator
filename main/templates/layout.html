@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock title%}</title>
+</head>
+<body>
+<header class="text-gray-400  bg-blue-500 body-font">
+  <div class="container mx-auto flex flex-wrap p-10 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-yellow-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Atik's translator</font>
+        </font>
+      </span>
+    </a>
+
+
+  </div>
+</header>
+{% block con %}
+{% endblock con %}
+<footer class="text-gray-400 bg-green-900 body-font">
+  <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 h-5 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+      < class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-yellow-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">
+          <p>Authors telegram:@atik_uwu</p>
+        </span>
+      </a>
+
+    </div>
+
+
+  </div>
+</footer>
+</body>
+</html>
